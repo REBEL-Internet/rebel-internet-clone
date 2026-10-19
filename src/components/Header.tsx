@@ -18,7 +18,7 @@ export function Header() {
               alt="REBEL Internet"
               width={120}
               height={46}
-              className="h-[46px] w-auto"
+              style={{ height: '46px', width: 'auto' }}
             />
           </Link>
         </div>

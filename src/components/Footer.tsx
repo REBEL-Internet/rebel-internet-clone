@@ -8,15 +8,15 @@ export function Footer() {
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
-              <Image
-                src="/images/RI-2023-White_90j390wq.svg"
-                alt="REBEL Internet"
-                width={150}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </Link>
+          <Link href="/">
+            <Image
+              src="/images/RI-2023-White_90j390wq.svg"
+              alt="REBEL Internet"
+              width={150}
+              height={40}
+              style={{ height: '40px', width: 'auto' }}
+            />
+          </Link>
           </div>
 
           {/* Navigation Links */}

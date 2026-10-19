@@ -13,10 +13,9 @@ export function HeroSection() {
           priority
         />
       </div>
-
-      <div className="relative z-10 w-full px-20">
+      <div className="relative z-10 w-full">
         {/* Hero content row */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] mb-[60px]">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] mb-[60px] px-4 md:px-20 max-w-[1440px] mx-auto">
           {/* Content column */}
           <div className="flex-1 max-w-[600px]">
             <h1 className="font-poppins text-[52px] font-extrabold leading-[62.4px] tracking-[-0.02em] text-white m-0 mb-6">
@@ -42,14 +41,15 @@ export function HeroSection() {
         </div>
 
         {/* Company logos row */}
-        <div className="flex flex-wrap justify-center items-center gap-10 mt-10">
+        <div className="flex flex-wrap justify-center items-center gap-10 mt-10 px-4 md:px-20 max-w-[1440px] mx-auto">
           <a href="https://marketplacestudio.nl/" className="transition-opacity duration-200 hover:opacity-70">
             <Image
               src="/images/mps-logo_pdy6y5pa.webp"
               alt="Marketplace Studio"
               width={200}
               height={50}
-              className="h-[50px] w-auto brightness-0 invert"
+              className="brightness-0 invert"
+              style={{ height: '50px', width: 'auto' }}
             />
           </a>
           <a href="https://mrkortingscode.nl/" className="transition-opacity duration-200 hover:opacity-70">
@@ -58,7 +58,8 @@ export function HeroSection() {
               alt="MR Kortingscode"
               width={200}
               height={50}
-              className="h-[50px] w-auto brightness-0 invert"
+              className="brightness-0 invert"
+              style={{ height: '50px', width: 'auto' }}
             />
           </a>
           <a href="https://ytgeeks.org/" className="transition-opacity duration-200 hover:opacity-70">
@@ -67,7 +68,8 @@ export function HeroSection() {
               alt="YouTube Geeks"
               width={200}
               height={50}
-              className="h-[50px] w-auto brightness-0 invert"
+              className="brightness-0 invert"
+              style={{ height: '50px', width: 'auto' }}
             />
           </a>
           <a href="https://new.webtrafficgeeks.org/" className="transition-opacity duration-200 hover:opacity-70">
@@ -76,7 +78,8 @@ export function HeroSection() {
               alt="Web Traffic Geeks"
               width={200}
               height={50}
-              className="h-[50px] w-auto brightness-0 invert"
+              className="brightness-0 invert"
+              style={{ height: '50px', width: 'auto' }}
             />
           </a>
         </div>
