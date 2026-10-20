@@ -173,25 +173,13 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {[
-              {
-                logo: "/images/WG-logo_jnkwt27z.svg",
-                name: "WebGeeks.ly",
-                description: "Ranking your product or service on any marketplace. The leading SEO no-cure no-pay platform ranking service on the internet.",
-                url: "https://webgeeks.ly/"
-              },
               {
                 logo: "/images/mr-korting_4lnzvsqn.png",
                 name: "MrKortingscode.nl",
                 description: "Quality coupon websites in 6+ countries, serving consumers with valid coupons and offer of 500+ online shops.",
                 url: "https://mrkortingscode.nl/"
-              },
-              {
-                logo: "/images/NicheBear-Logo_mx3ea497.svg",
-                name: "NicheBear.com",
-                description: "Small niche-targeted websites focused on providing clients with quality content & comparisons of products and services in The Netherlands.",
-                url: null
               }
             ].map((company, index) => (
               <div key={index} className="group">
