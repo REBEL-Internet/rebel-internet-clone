@@ -3,11 +3,71 @@ import { HeroSection } from '@/components/HeroSection'
 import { Footer } from '@/components/Footer'
 import Image from 'next/image'
 
-export default function Home() {
+export default function NLHome() {
   return (
     <div className="min-h-screen">
       <Header />
-      <HeroSection />
+      
+      {/* Dutch Hero Section */}
+      <section className="relative w-full min-h-[630px] bg-gradient-to-br from-[#D62D3A] via-[#E63946] to-[#C72030] text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1)_0%,transparent_50%)] animate-pulse" />
+        
+        <div className="absolute inset-0 z-0 opacity-20">
+          <Image
+            src="/images/RI-Background_or3xefls.png"
+            alt=""
+            fill
+            className="object-cover mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] mb-[60px] px-4 md:px-20 max-w-[1440px] mx-auto">
+            <div className="flex-1 max-w-[600px] space-y-8">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold tracking-wider uppercase border border-white/20">
+                  Mondiale Digitale Excellentie
+                </span>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                Ons Holdingbedrijf
+              </h1>
+
+              <p className="text-xl leading-relaxed text-white/90">
+                REBEL Internet is een holdingbedrijf dat meer dan{' '}
+                <span className="font-bold text-white">30+ unieke webconcepten</span>{' '}
+                wereldwijd heeft gecreëerd en runt. Van kleine affiliate marketing websites tot marketplace ranking services in China.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#companies">
+                  <button className="bg-white text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-elegant transition-all duration-300">
+                    Onze Bedrijven
+                  </button>
+                </a>
+                <a href="/about">
+                  <button className="border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-[#D62D3A] transition-all duration-300">
+                    Meer Informatie →
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div className="flex-1 max-w-[500px]">
+              <div className="relative w-full h-[400px] animate-float">
+                <Image
+                  src="/animations/hero-animation.json"
+                  alt="REBEL Internet Animation"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Premium Company Logos Section */}
       <section className="bg-white py-16 border-y border-gray-100">
@@ -45,32 +105,31 @@ export default function Home() {
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-                  Our Story
+                  Ons Verhaal
                 </span>
               </div>
-              
+
               <h2 className="text-5xl md:text-6xl font-black leading-tight">
-                Born in <span className="text-[#D62D3A]">Alkmaar</span>,<br />
-                matured in <span className="text-[#D62D3A]">Amsterdam</span>!
+                Geboren in Alkmaar, volwassen geworden in Amsterdam!
               </h2>
-              
+
               <p className="text-xl text-[#595658] leading-relaxed">
-                REBEL consists of various digital services which are being created, grown and managed by a <span className="font-bold text-[#202020]">100% remote team</span> of motivated experts. Visit our companies websites and experience the effectiveness of our services today.
+                REBEL bestaat uit verschillende digitale diensten die worden gecreëerd, ontwikkeld en beheerd door een{' '}
+                <span className="font-bold text-[#D62D3A]">100% remote team</span>{' '}
+                van gemotiveerde experts. Bezoek de websites van onze bedrijven en ervaar vandaag nog de effectiviteit van onze diensten.
               </p>
-              
-              <div className="flex gap-4 pt-4">
-                <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-4xl font-black text-[#D62D3A]">30+</div>
-                  <div className="text-sm text-gray-600 mt-2">Web Concepts</div>
-                </div>
-                <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-4xl font-black text-[#D62D3A]">100%</div>
-                  <div className="text-sm text-gray-600 mt-2">Remote Team</div>
-                </div>
-                <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-4xl font-black text-[#D62D3A]">Global</div>
-                  <div className="text-sm text-gray-600 mt-2">Reach</div>
-                </div>
+
+              <div className="grid grid-cols-3 gap-8 pt-8">
+                {[
+                  { number: "30+", label: "Webconcepten" },
+                  { number: "100%", label: "Remote Team" },
+                  { number: "Wereldwijd", label: "Bereik" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group hover:scale-110 transition-transform duration-300">
+                    <div className="text-4xl font-black text-[#D62D3A] mb-2">{stat.number}</div>
+                    <div className="text-sm text-[#595658] font-semibold">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -81,25 +140,25 @@ export default function Home() {
                 alt="REBEL Team"
                 width={600}
                 height={600}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto rounded-3xl shadow-2xl relative z-10"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Premium Career Section */}
+      {/* Premium Careers Section */}
       <section className="bg-white py-24">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
             <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-              Careers
+              Vacatures
             </span>
             <h2 className="text-5xl md:text-6xl font-black mt-6 mb-4">
-              Join our <span className="text-[#D62D3A]">team</span>
+              Word lid van ons team
             </h2>
             <p className="text-xl text-[#595658] max-w-2xl mx-auto">
-              See our open positions below
+              Bekijk onze openstaande vacatures hieronder
             </p>
           </div>
 
@@ -129,7 +188,7 @@ export default function Home() {
                     {job.title}
                   </h3>
                   <a href={job.link} className="inline-flex items-center gap-2 text-[#D62D3A] font-semibold hover:gap-4 transition-all">
-                    Learn More 
+                    Meer Informatie 
                     <span className="text-2xl">→</span>
                   </a>
                 </div>
@@ -151,7 +210,7 @@ export default function Home() {
               Portfolio
             </span>
             <h2 className="text-5xl md:text-6xl font-black mt-6 mb-4">
-              Our Companies
+              Onze Bedrijven
             </h2>
           </div>
 
@@ -160,7 +219,7 @@ export default function Home() {
               {
                 logo: "/images/mrkortingscode-logo.png",
                 name: "MrKortingscode.nl",
-                description: "Quality coupon websites in 6+ countries, serving consumers with valid coupons and offer of 500+ online shops.",
+                description: "Hoogwaardige kortingscode websites in 6+ landen, die consumenten voorzien van geldige kortingscodes en aanbiedingen van 500+ online winkels.",
                 url: "https://mrkortingscode.nl/"
               }
             ].map((company, index) => (
@@ -170,8 +229,8 @@ export default function Home() {
                     <Image
                       src={company.logo}
                       alt={company.name}
-                      width={150}
-                      height={150}
+                      width={200}
+                      height={80}
                       className="h-20 w-auto brightness-0 invert group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
@@ -201,26 +260,26 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-                Get In Touch
+                Neem Contact Op
               </span>
               
               <h2 className="text-5xl md:text-6xl font-black leading-tight">
-                Say Hi! to <span className="text-[#D62D3A]">Bram</span>
+                Zeg hoi tegen <span className="text-[#D62D3A]">Bram</span>
               </h2>
               
               <p className="text-xl text-[#595658] leading-relaxed">
-                Contact Bram our CEO in case of questions or potential partnerships!
+                Neem contact op met Bram, onze CEO, voor vragen of mogelijke samenwerkingen!
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a href="/contact-us">
                   <button className="bg-gradient-to-r from-[#D62D3A] to-[#E63946] text-white px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-elegant transition-all duration-300">
-                    Contact us
+                    Neem contact op
                   </button>
                 </a>
                 <a href="/about">
                   <button className="bg-white border-2 border-[#D62D3A] text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#D62D3A] hover:text-white transition-all duration-300">
-                    Find Out More
+                    Meer Informatie
                   </button>
                 </a>
               </div>
@@ -230,7 +289,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#D62D3A]/20 to-[#E63946]/20 rounded-3xl blur-2xl" />
               <Image
                 src="/images/rebel2022-bram-photo_eav1yc77.png"
-                alt="Bram - CEO of REBEL Internet"
+                alt="Bram - CEO van REBEL Internet"
                 width={350}
                 height={350}
                 className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 max-w-md mx-auto"

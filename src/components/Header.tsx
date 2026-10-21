@@ -60,17 +60,17 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link href="/" className="hover:opacity-70 transition-all duration-200 hover:scale-110">
             <Image
-              src="/images/uk_45npn8ku.png"
-              alt="English"
+              src="/images/flag-netherlands_1f1f3-1f1f1_31muh9wl_yfutokfd.webp"
+              alt="Nederlands"
               width={24}
               height={24}
               className="rounded-full w-6 h-6 object-cover ring-2 ring-transparent hover:ring-[#d62d3a]"
             />
           </Link>
-          <Link href="/nl-home" className="hover:opacity-70 transition-all duration-200 hover:scale-110">
+          <Link href="/en" className="hover:opacity-70 transition-all duration-200 hover:scale-110">
             <Image
-              src="/images/flag-netherlands_1f1f3-1f1f1_31muh9wl_yfutokfd.webp"
-              alt="Nederlands"
+              src="/images/uk_45npn8ku.png"
+              alt="English"
               width={24}
               height={24}
               className="rounded-full w-6 h-6 object-cover ring-2 ring-transparent hover:ring-[#d62d3a]"
@@ -109,17 +109,17 @@ export function Header() {
             <div className="flex items-center gap-4 pt-6 mt-2">
               <Link href="/" className="hover:opacity-70 transition-all duration-200">
                 <Image
-                  src="/images/uk_45npn8ku.png"
-                  alt="English"
+                  src="/images/flag-netherlands_1f1f3-1f1f1_31muh9wl_yfutokfd.webp"
+                  alt="Nederlands"
                   width={32}
                   height={32}
                   className="rounded-full w-8 h-8 object-cover"
                 />
               </Link>
-              <Link href="/nl-home" className="hover:opacity-70 transition-all duration-200">
+              <Link href="/en" className="hover:opacity-70 transition-all duration-200">
                 <Image
-                  src="/images/flag-netherlands_1f1f3-1f1f1_31muh9wl_yfutokfd.webp"
-                  alt="Nederlands"
+                  src="/images/uk_45npn8ku.png"
+                  alt="English"
                   width={32}
                   height={32}
                   className="rounded-full w-8 h-8 object-cover"
