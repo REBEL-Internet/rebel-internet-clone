@@ -14,12 +14,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-16 opacity-60 hover:opacity-100 transition-opacity duration-300">
             {[
-              { src: "/images/mps-logo_pdy6y5pa.webp", alt: "Marketplace Studio" },
-              { src: "/images/mrk-logo_zgpxw1wj.png", alt: "MrKortingscode" },
-              { src: "/images/youtube-geeks-logo_ro9wty1v_qn74tjmp.webp", alt: "YouTube Geeks" },
-              { src: "/images/IMAGE_09jluh0z_wzizhlr6.webp", alt: "Web Traffic Geeks" }
+              { src: "/images/mps-logo_pdy6y5pa.webp", alt: "Marketplace Studio", href: "https://marketplacestudio.nl/" },
+              { src: "/images/mrkortingscode-logo.png", alt: "MR Kortingscode", href: "https://mrkortingscode.nl/" },
+              { src: "/images/youtube-geeks-logo_ro9wty1v_qn74tjmp.webp", alt: "YouTube Geeks", href: "https://ytgeeks.org/" },
+              { src: "/images/IMAGE_09jluh0z_wzizhlr6.webp", alt: "Web Traffic Geeks", href: "https://new.webtrafficgeeks.org/" }
             ].map((logo) => (
-              <div key={logo.alt} className="grayscale hover:grayscale-0 transition-all duration-300">
+              <a key={logo.alt} href={logo.href} target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all duration-300">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -27,7 +27,7 @@ export default function Home() {
                   height={30}
                   className="h-8 w-auto"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -103,31 +103,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {[
-              { 
-                img: "/images/Rectangle-91_mku6xkst.png", 
-                title: "Experienced Technical VA with wordpress experience", 
-                link: "/tech-va",
-                color: "from-blue-500 to-blue-600"
-              },
-              { 
-                img: "/images/Rectangle-92_c1677aaf.png", 
-                title: "Experienced Python and WordPress Developer", 
-                link: "/Python-WordPress-Developer",
-                color: "from-green-500 to-green-600"
-              },
               { 
                 img: "/images/Screenshot-2024-05-22-083634-1-p3bhh.png", 
                 title: "HR Operations Manager", 
                 link: "/Remote-HR-Operational-Manager",
                 color: "from-purple-500 to-purple-600"
-              },
-              { 
-                img: "/images/Screenshot20241212174748-CvvBm.png", 
-                title: "Data Analyst", 
-                link: "/",
-                color: "from-orange-500 to-orange-600"
               }
             ].map((job, index) => (
               <div key={index} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-white">
@@ -176,7 +158,7 @@ export default function Home() {
           <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {[
               {
-                logo: "/images/mr-korting_4lnzvsqn.png",
+                logo: "/images/mrkortingscode-logo.png",
                 name: "MrKortingscode.nl",
                 description: "Quality coupon websites in 6+ countries, serving consumers with valid coupons and offer of 500+ online shops.",
                 url: "https://mrkortingscode.nl/"
@@ -249,9 +231,9 @@ export default function Home() {
               <Image
                 src="/images/rebel2022-bram-photo_eav1yc77.png"
                 alt="Bram - CEO of REBEL Internet"
-                width={500}
-                height={500}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+                width={350}
+                height={350}
+                className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 max-w-md mx-auto"
               />
             </div>
           </div>
