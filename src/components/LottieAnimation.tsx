@@ -6,27 +6,38 @@ export function LottieAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !containerRef.current) return;
-    
-    import('lottie-web').then((lottie) => {
-      fetch('/animations/hero-animation.json')
-        .then(res => res.json())
-        .then(animationData => {
-          if (!containerRef.current) return;
-          
-          const animation = lottie.default.loadAnimation({
-            container: containerRef.current,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            animationData: animationData
-          });
+    if (!containerRef.current) return;
 
-          return () => {
-            animation.destroy();
-          };
+    let cancelled = false;
+    let animation: { destroy: () => void } | undefined;
+
+    async function loadAnimation() {
+      const [lottie, response] = await Promise.all([
+        import('lottie-web'),
+        fetch('/animations/hero-animation.json'),
+      ]);
+      if (!response.ok) throw new Error(`Animation request failed: ${response.status}`);
+      const animationData = await response.json();
+
+      if (!cancelled && containerRef.current) {
+        animation = lottie.default.loadAnimation({
+          container: containerRef.current,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData,
         });
+      }
+    }
+
+    void loadAnimation().catch((error: unknown) => {
+      if (!cancelled) console.error('Could not load REBEL Internet animation:', error);
     });
+
+    return () => {
+      cancelled = true;
+      animation?.destroy();
+    };
   }, []);
 
   return (

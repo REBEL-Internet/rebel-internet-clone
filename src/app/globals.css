@@ -1,16 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Microsoft AI Theme - Sunlight and Marginalia */
+  --color-peach: #fbd3be;
+  --color-ink: #5d524b;
+  --color-action-paper: #f7ecd9;
+  --color-editorial: #f7f1e3;
+  --color-canvas: #fef9ed;
+  
+  /* REBEL Accent Override */
   --rebel-red: #D62D3A;
-  --rebel-red-dark: #C72030;
-  --rebel-cream: #FFFBF6;
-  --rebel-gray: #595658;
+  
+  /* Shadows */
+  --shadow-floating-nav: 0px 4px 80px rgba(93, 82, 75, 0.3);
+  
+  /* Spacing */
+  --space-compact: 10px;
+  --space-footer-gutter: 16.7px;
+  --space-capability: 21.7px;
+  --space-card-inset: 25px;
+  --space-row-vertical: 30px;
+  --space-row-horizontal: 32.5px;
+  --space-card-gap: 41.7px;
+  --space-carousel: 46.7px;
+  --space-section: 120px;
+  --space-manifesto: 266.7px;
+  
+  /* Corner Radius */
+  --radius-action: 28.4px;
+  --radius-editorial: 4.2px;
+  --radius-feature: 3.3px;
+  --radius-nav: 5px;
+  --radius-control: 2.5px;
 }
 
 body {
+  font-family: 'Libre Caslon Display', Georgia, serif;
   font-feature-settings: "rlig" 1, "calt" 1;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+/* Typography Styles */
+.font-serif {
+  font-family: 'Libre Caslon Display', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+}
+
+/* Display text - hero headline */
+.text-display {
+  font-size: 125px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+.text-display-italic {
+  font-size: 125px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Section statement */
+.text-section-statement {
+  font-size: 56.9px;
+  line-height: 1;
+  letter-spacing: -0.0037em;
+  font-weight: 400;
+}
+
+/* Heading */
+.text-heading {
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 450;
+}
+
+/* Editorial title */
+.text-editorial-title {
+  font-size: 37.3px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 450;
+}
+
+/* Signed statement */
+.text-signed-statement {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 450;
+}
+
+/* Hero support */
+.text-hero-support {
+  font-size: 26.7px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 450;
+}
+
+/* Body */
+.text-body {
+  font-size: 21.3px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 450;
+}
+
+/* Action buttons */
+.text-action {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+  font-size: 14.2px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+/* Navigation */
+.text-navigation {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+  font-size: 14.2px;
+  line-height: 1.8;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+/* Eyebrow */
+.text-eyebrow {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+  font-size: 14.2px;
+  line-height: 1;
+  letter-spacing: 0.1055em;
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Caption */
+.text-caption {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+  font-size: 14.2px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+/* Footer link */
+.text-footer-link {
+  font-family: 'Red Hat Mono', ui-monospace, monospace;
+  font-size: 13.3px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  font-weight: 400;
 }
 
 /* Custom scrollbar */
@@ -19,16 +171,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--rebel-cream);
+  background: var(--color-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--rebel-red);
+  background: var(--color-ink);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--rebel-red-dark);
+  background: var(--rebel-red);
 }
 
 /* Smooth scroll behavior */
@@ -36,33 +188,111 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Premium animations */
-@keyframes float {
+/* Sunlight field animation */
+@keyframes sunlight-drift {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateX(-20px) translateY(-10px) rotate(-45deg);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateX(20px) translateY(10px) rotate(-45deg);
   }
 }
 
-@keyframes glow {
-  0%, 100% {
+.animate-sunlight {
+  animation: sunlight-drift 20s ease-in-out infinite;
+}
+
+/* Gentle fade */
+@keyframes gentle-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
+    transform: translateY(0);
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.animate-gentle-fade {
+  animation: gentle-fade 1.1s ease-out forwards;
 }
 
-.animate-glow {
-  animation: glow 3s ease-in-out infinite;
+/* Component Styles */
+
+/* Light button */
+.btn-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-action-paper);
+  color: var(--color-ink);
+  border-radius: var(--radius-action);
+  padding: 14.2px 42.7px;
+  transition: all 0.2s ease;
 }
 
-.shadow-elegant {
-  box-shadow: 0 20px 60px -15px rgba(214, 45, 58, 0.3);
+.btn-light:hover {
+  background: #f5e5c9;
+  transform: translateY(-1px);
+}
+
+/* Dark button */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-ink);
+  color: var(--color-action-paper);
+  border-radius: var(--radius-action);
+  padding: 14.2px 42.7px;
+  transition: all 0.2s ease;
+}
+
+.btn-dark:hover {
+  background: #4a3f3a;
+  transform: translateY(-1px);
+}
+
+/* Floating navigation */
+.floating-nav {
+  background: var(--color-canvas);
+  border-radius: var(--radius-nav);
+  filter: drop-shadow(var(--shadow-floating-nav));
+  padding: 0 18.3px;
+  height: 59px;
+}
+
+/* Capability row */
+.capability-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-row-vertical) var(--space-row-horizontal);
+  margin-bottom: var(--space-capability);
+  background: var(--color-canvas);
+  border-radius: var(--radius-feature);
+}
+
+/* Editorial card */
+.editorial-card {
+  background: var(--color-editorial);
+  border-radius: var(--radius-editorial);
+  padding: var(--space-card-inset) 0;
+  transition: all 0.3s ease;
+}
+
+.editorial-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Watercolor symbol placeholder */
+.watercolor-symbol {
+  width: 217px;
+  height: 217px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(70,151,123,0.15) 0%, rgba(217,121,155,0.15) 50%, rgba(228,191,91,0.15) 100%);
+  border-radius: var(--radius-feature);
 }

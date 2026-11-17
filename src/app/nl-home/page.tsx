@@ -1,12 +1,12 @@
 import { Header } from '@/components/Header'
-import { HeroSection } from '@/components/HeroSection'
 import { Footer } from '@/components/Footer'
+import { LottieAnimation } from '@/components/LottieAnimation'
 import Image from 'next/image'
 
 export default function NLHome() {
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header lang="nl" />
       
       {/* Dutch Hero Section */}
       <section className="relative w-full min-h-[630px] bg-gradient-to-br from-[#D62D3A] via-[#E63946] to-[#C72030] text-white py-20 overflow-hidden">
@@ -25,26 +25,19 @@ export default function NLHome() {
         <div className="relative z-10 w-full">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] mb-[60px] px-4 md:px-20 max-w-[1440px] mx-auto">
             <div className="flex-1 max-w-[600px] space-y-8">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold tracking-wider uppercase border border-white/20">
-                  Mondiale Digitale Excellentie
-                </span>
-              </div>
-
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                Ons Holdingbedrijf
+                Onze Websites & Diensten
               </h1>
 
               <p className="text-xl leading-relaxed text-white/90">
-                REBEL Internet is een holdingbedrijf dat meer dan{' '}
-                <span className="font-bold text-white">30+ unieke webconcepten</span>{' '}
-                wereldwijd heeft gecreëerd en runt. Van kleine affiliate marketing websites tot marketplace ranking services in China.
+                We bouwen en beheren onze eigen websites en digitale diensten, waaronder{' '}
+                <span className="font-bold text-white">MrKortingscode.nl</span> en specialistische marketplace-rankingdiensten.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#companies">
                   <button className="bg-white text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-elegant transition-all duration-300">
-                    Onze Bedrijven
+                    Onze Websites & Diensten
                   </button>
                 </a>
                 <a href="/about">
@@ -57,12 +50,7 @@ export default function NLHome() {
 
             <div className="flex-1 max-w-[500px]">
               <div className="relative w-full h-[400px] animate-float">
-                <Image
-                  src="/animations/hero-animation.json"
-                  alt="REBEL Internet Animation"
-                  fill
-                  className="object-contain"
-                />
+                <LottieAnimation />
               </div>
             </div>
           </div>
@@ -75,7 +63,7 @@ export default function NLHome() {
           <div className="flex flex-wrap justify-center items-center gap-16 opacity-60 hover:opacity-100 transition-opacity duration-300">
             {[
               { src: "/images/mps-logo_pdy6y5pa.webp", alt: "Marketplace Studio", href: "https://marketplacestudio.nl/" },
-              { src: "/images/mrkortingscode-logo.png", alt: "MR Kortingscode", href: "https://mrkortingscode.nl/" },
+              { src: "/images/mrkortingscode-logo.png", alt: "MrKortingscode.nl", href: "https://mrkortingscode.nl/" },
               { src: "/images/youtube-geeks-logo_ro9wty1v_qn74tjmp.webp", alt: "YouTube Geeks", href: "https://ytgeeks.org/" },
               { src: "/images/IMAGE_09jluh0z_wzizhlr6.webp", alt: "Web Traffic Geeks", href: "https://new.webtrafficgeeks.org/" }
             ].map((logo) => (
@@ -114,9 +102,9 @@ export default function NLHome() {
               </h2>
 
               <p className="text-xl text-[#595658] leading-relaxed">
-                REBEL bestaat uit verschillende digitale diensten die worden gecreëerd, ontwikkeld en beheerd door een{' '}
+                REBEL bouwt en beheert eigen websites en digitale diensten met een{' '}
                 <span className="font-bold text-[#D62D3A]">100% remote team</span>{' '}
-                van gemotiveerde experts. Bezoek de websites van onze bedrijven en ervaar vandaag nog de effectiviteit van onze diensten.
+                van gemotiveerde experts. Bekijk onze websites en diensten en ontdek wat we voor je kunnen betekenen.
               </p>
 
               <div className="grid grid-cols-3 gap-8 pt-8">
@@ -140,7 +128,7 @@ export default function NLHome() {
                 alt="REBEL Team"
                 width={600}
                 height={600}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10"
+                className="w-full h-auto rounded-3xl relative z-10"
               />
             </div>
           </div>
@@ -210,7 +198,7 @@ export default function NLHome() {
               Portfolio
             </span>
             <h2 className="text-5xl md:text-6xl font-black mt-6 mb-4">
-              Onze Bedrijven
+              Onze Websites & Diensten
             </h2>
           </div>
 
@@ -224,14 +212,16 @@ export default function NLHome() {
               }
             ].map((company, index) => (
               <div key={index} className="group">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:h-full flex flex-col">
                   <div className="mb-6 h-24 flex items-center justify-center">
                     <Image
                       src={company.logo}
                       alt={company.name}
-                      width={200}
-                      height={80}
-                      className="h-20 w-auto brightness-0 invert group-hover:scale-110 transition-transform duration-300"
+                      width={240}
+                      height={100}
+                      className={company.logo.includes('mrkortingscode')
+                        ? 'h-24 w-auto group-hover:scale-110 transition-transform duration-300'
+                        : 'h-20 w-auto brightness-0 invert group-hover:scale-110 transition-transform duration-300'}
                     />
                   </div>
                   
@@ -292,14 +282,14 @@ export default function NLHome() {
                 alt="Bram - CEO van REBEL Internet"
                 width={350}
                 height={350}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 max-w-md mx-auto"
+                className="w-full h-auto rounded-3xl relative z-10 hover:scale-105 transition-transform duration-500 max-w-md mx-auto"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer lang="nl" />
     </div>
   )
 }

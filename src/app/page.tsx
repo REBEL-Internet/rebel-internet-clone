@@ -1,305 +1,201 @@
 import { Header } from '@/components/Header'
-import { HeroSection } from '@/components/HeroSection'
 import { Footer } from '@/components/Footer'
+import { SunlightField } from '@/components/SunlightField'
 import Image from 'next/image'
 
 export default function NLHome() {
   return (
-    <div className="min-h-screen">
-      <Header />
+    <div className="min-h-screen bg-[#fef9ed]">
+      <Header lang="nl" />
       
-      {/* Dutch Hero Section */}
-      <section className="relative w-full min-h-[630px] bg-gradient-to-br from-[#D62D3A] via-[#E63946] to-[#C72030] text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1)_0%,transparent_50%)] animate-pulse" />
+      {/* Sunlit Hero Section - First Screen */}
+      <section className="relative w-full h-[900px] overflow-hidden">
+        <SunlightField />
         
-        <div className="absolute inset-0 z-0 opacity-20">
-          <Image
-            src="/images/RI-Background_or3xefls.png"
-            alt=""
-            fill
-            className="object-cover mix-blend-overlay"
-            priority
-          />
-        </div>
-
-        <div className="relative z-10 w-full">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] mb-[60px] px-4 md:px-20 max-w-[1440px] mx-auto">
-            <div className="flex-1 max-w-[600px] space-y-8">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold tracking-wider uppercase border border-white/20">
-                  Mondiale Digitale Excellentie
-                </span>
+        <div className="relative z-10 h-full flex items-center justify-center px-4">
+          <div className="max-w-[1150px] mx-auto text-center">
+            {/* Two-line literary promise */}
+            <h1 className="mb-8">
+              <div className="text-display-italic text-[#fef9ed] mb-2">
+                SEO & AI
               </div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                Ons Holdingbedrijf
-              </h1>
-
-              <p className="text-xl leading-relaxed text-white/90">
-                REBEL Internet is een holdingbedrijf dat meer dan{' '}
-                <span className="font-bold text-white">30+ unieke webconcepten</span>{' '}
-                wereldwijd heeft gecreëerd en runt. Van kleine affiliate marketing websites tot marketplace ranking services in China.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#companies">
-                  <button className="bg-white text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-elegant transition-all duration-300">
-                    Onze Bedrijven
-                  </button>
-                </a>
-                <a href="/about">
-                  <button className="border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-[#D62D3A] transition-all duration-300">
-                    Meer Informatie →
-                  </button>
-                </a>
+              <div className="text-display text-[#fef9ed]">
+                Zichtbaarheidsexpert
               </div>
-            </div>
-
-            <div className="flex-1 max-w-[500px]">
-              <div className="relative w-full h-[400px] animate-float">
-                <Image
-                  src="/animations/hero-animation.json"
-                  alt="REBEL Internet Animation"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            </h1>
+            
+            {/* Support line */}
+            <p className="text-hero-support text-[#fef9ed] max-w-[800px] mx-auto">
+              Verantwoordelijke digitale aanwezigheid die uw bedrijf versterkt
+            </p>
           </div>
         </div>
       </section>
       
-      {/* Premium Company Logos Section */}
-      <section className="bg-white py-16 border-y border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-16 opacity-60 hover:opacity-100 transition-opacity duration-300">
-            {[
-              { src: "/images/mps-logo_pdy6y5pa.webp", alt: "Marketplace Studio", href: "https://marketplacestudio.nl/" },
-              { src: "/images/mrkortingscode-logo.png", alt: "MR Kortingscode", href: "https://mrkortingscode.nl/" },
-              { src: "/images/youtube-geeks-logo_ro9wty1v_qn74tjmp.webp", alt: "YouTube Geeks", href: "https://ytgeeks.org/" },
-              { src: "/images/IMAGE_09jluh0z_wzizhlr6.webp", alt: "Web Traffic Geeks", href: "https://new.webtrafficgeeks.org/" }
-            ].map((logo) => (
-              <a key={logo.alt} href={logo.href} target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all duration-300">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120}
-                  height={30}
-                  className="h-8 w-auto"
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Premium About Section */}
-      <section className="bg-gradient-to-br from-[#FFFBF6] to-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#D62D3A] rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E63946] rounded-full blur-3xl" />
-        </div>
-        
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-                  Ons Verhaal
-                </span>
-              </div>
-
-              <h2 className="text-5xl md:text-6xl font-black leading-tight">
-                Geboren in Alkmaar, volwassen geworden in Amsterdam!
-              </h2>
-
-              <p className="text-xl text-[#595658] leading-relaxed">
-                REBEL bestaat uit verschillende digitale diensten die worden gecreëerd, ontwikkeld en beheerd door een{' '}
-                <span className="font-bold text-[#D62D3A]">100% remote team</span>{' '}
-                van gemotiveerde experts. Bezoek de websites van onze bedrijven en ervaar vandaag nog de effectiviteit van onze diensten.
-              </p>
-
-              <div className="grid grid-cols-3 gap-8 pt-8">
-                {[
-                  { number: "30+", label: "Webconcepten" },
-                  { number: "100%", label: "Remote Team" },
-                  { number: "Wereldwijd", label: "Bereik" }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center group hover:scale-110 transition-transform duration-300">
-                    <div className="text-4xl font-black text-[#D62D3A] mb-2">{stat.number}</div>
-                    <div className="text-sm text-[#595658] font-semibold">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D62D3A]/20 to-[#E63946]/20 rounded-3xl blur-2xl" />
-              <Image
-                src="/images/Group-8-modified_yfpwu32w.png"
-                alt="REBEL Team"
-                width={600}
-                height={600}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Premium Careers Section */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-              Vacatures
-            </span>
-            <h2 className="text-5xl md:text-6xl font-black mt-6 mb-4">
-              Word lid van ons team
+      {/* About Section - with centered statement */}
+      <section className="py-[120px] px-4">
+        <div className="max-w-[1150px] mx-auto">
+          <div className="max-w-[800px] mx-auto text-center mb-[120px]">
+            <h2 className="text-section-statement text-[#5d524b] mb-8">
+              Geboren in Alkmaar, volwassen geworden in Amsterdam
             </h2>
-            <p className="text-xl text-[#595658] max-w-2xl mx-auto">
-              Bekijk onze openstaande vacatures hieronder
+            <p className="text-body text-[#5d524b]/80">
+              REBEL bouwt en beheert eigen websites en digitale diensten met een 100% remote team van gemotiveerde experts.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
-              { 
-                img: "/images/Screenshot-2024-05-22-083634-1-p3bhh.png", 
-                title: "HR Operations Manager", 
-                link: "/Remote-HR-Operational-Manager",
-                color: "from-purple-500 to-purple-600"
-              }
-            ].map((job, index) => (
-              <div key={index} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-white">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={job.img}
-                    alt={job.title}
-                    width={400}
-                    height={224}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${job.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300`} />
-                </div>
-                
-                <div className="p-8">
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#D62D3A] transition-colors">
-                    {job.title}
-                  </h3>
-                  <a href={job.link} className="inline-flex items-center gap-2 text-[#D62D3A] font-semibold hover:gap-4 transition-all">
-                    Meer Informatie 
-                    <span className="text-2xl">→</span>
-                  </a>
-                </div>
+              { number: "30+", label: "Webconcepten" },
+              { number: "100%", label: "Remote Team" },
+              { number: "Wereldwijd", label: "Bereik" }
+            ].map((stat, index) => (
+              <div key={index} className="p-8">
+                <div className="text-[56.9px] leading-none font-serif text-[#D62D3A] mb-4">{stat.number}</div>
+                <div className="text-eyebrow text-[#5d524b]">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Premium Companies Section */}
-      <section id="companies" className="bg-gradient-to-br from-[#D62D3A] via-[#E63946] to-[#C72030] py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/RI-Background_or3xefls.png')] bg-cover bg-center" />
-        </div>
-        
-        <div className="container mx-auto px-4 max-w-7xl text-white relative z-10">
-          <div className="text-center mb-16">
-            <span className="px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold tracking-wider uppercase border border-white/30">
-              Portfolio
-            </span>
-            <h2 className="text-5xl md:text-6xl font-black mt-6 mb-4">
-              Onze Bedrijven
+      {/* Capabilities Section - Illustrated offering list */}
+      <section className="py-[120px] px-4 bg-[#f7f1e3]">
+        <div className="max-w-[1150px] mx-auto">
+          <div className="max-w-[800px] mx-auto text-center mb-[120px]">
+            <p className="text-eyebrow text-[#5d524b] mb-4">Portfolio</p>
+            <h2 className="text-section-statement text-[#5d524b] mb-6">
+              Onze Websites & Diensten
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
-            {[
-              {
-                logo: "/images/mrkortingscode-logo.png",
-                name: "MrKortingscode.nl",
-                description: "Hoogwaardige kortingscode websites in 6+ landen, die consumenten voorzien van geldige kortingscodes en aanbiedingen van 500+ online winkels.",
-                url: "https://mrkortingscode.nl/"
-              }
-            ].map((company, index) => (
-              <div key={index} className="group">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col">
-                  <div className="mb-6 h-24 flex items-center justify-center">
-                    <Image
-                      src={company.logo}
-                      alt={company.name}
-                      width={200}
-                      height={80}
-                      className="h-20 w-auto brightness-0 invert group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  
-                  <p className="mb-6 text-sm leading-relaxed text-white/90 flex-grow">
-                    {company.description}
-                  </p>
-                  
-                  {company.url ? (
-                    <a href={company.url} className="font-bold text-white hover:text-white/80 transition-colors inline-flex items-center gap-2 group/link">
-                      <span className="text-lg">{company.name}</span>
-                      <span className="transform group-hover/link:translate-x-1 transition-transform">→</span>
-                    </a>
-                  ) : (
-                    <div className="font-bold text-white text-lg">{company.name}</div>
-                  )}
-                </div>
+          {/* Capability rows */}
+          <div className="space-y-[21.7px]">
+            <div className="capability-row">
+              <div className="watercolor-symbol flex-shrink-0">
+                <Image
+                  src="/images/mrkortingscode-logo.png"
+                  alt="MrKortingscode"
+                  width={150}
+                  height={60}
+                  className="object-contain"
+                />
               </div>
-            ))}
+              
+              <div className="flex-1 px-8">
+                <p className="text-eyebrow text-[#5d524b] mb-2">Kortingscodes</p>
+                <h3 className="text-heading text-[#5d524b] mb-4">
+                  <a href="https://mrkortingscode.nl/" className="hover:text-[#D62D3A] transition-colors">
+                    MrKortingscode.nl
+                  </a>
+                </h3>
+                <a href="https://mrkortingscode.nl/" className="btn-light text-action inline-block">
+                  Bezoek website
+                </a>
+              </div>
+              
+              <div className="w-[333px] flex-shrink-0">
+                <p className="text-body text-[#5d524b]/80">
+                  Hoogwaardige kortingscode websites in 6+ landen, die consumenten voorzien van geldige kortingscodes en aanbiedingen.
+                </p>
+              </div>
+            </div>
+
+            <div className="capability-row">
+              <div className="watercolor-symbol flex-shrink-0">
+                <Image
+                  src="/images/mps-logo_pdy6y5pa.webp"
+                  alt="Marketplace Studio"
+                  width={150}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+              
+              <div className="flex-1 px-8">
+                <p className="text-eyebrow text-[#5d524b] mb-2">SEO Services</p>
+                <h3 className="text-heading text-[#5d524b] mb-4">
+                  <a href="https://marketplacestudio.nl/" className="hover:text-[#D62D3A] transition-colors">
+                    Marketplace Studio
+                  </a>
+                </h3>
+                <a href="https://marketplacestudio.nl/" className="btn-light text-action inline-block">
+                  Meer informatie
+                </a>
+              </div>
+              
+              <div className="w-[333px] flex-shrink-0">
+                <p className="text-body text-[#5d524b]/80">
+                  Gespecialiseerde marketplace ranking diensten voor bedrijven die zichtbaarheid zoeken op platforms zoals Bol.com.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Summary action */}
+          <div className="text-center mt-12">
+            <a href="/projects" className="btn-dark text-action inline-flex items-center gap-3">
+              Bekijk alle projecten
+              <span className="inline-block w-[43px] h-[43px] bg-[#5d524b] rounded-sm flex items-center justify-center">
+                →
+              </span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Premium CTA Section */}
-      <section className="bg-gradient-to-br from-[#FFFBF6] to-white py-24">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <span className="px-4 py-2 bg-[#D62D3A]/10 text-[#D62D3A] rounded-full text-sm font-semibold tracking-wider uppercase">
-                Neem Contact Op
-              </span>
-              
-              <h2 className="text-5xl md:text-6xl font-black leading-tight">
-                Zeg hoi tegen <span className="text-[#D62D3A]">Bram</span>
-              </h2>
-              
-              <p className="text-xl text-[#595658] leading-relaxed">
-                Neem contact op met Bram, onze CEO, voor vragen of mogelijke samenwerkingen!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <a href="/contact-us">
-                  <button className="bg-gradient-to-r from-[#D62D3A] to-[#E63946] text-white px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-elegant transition-all duration-300">
-                    Neem contact op
-                  </button>
-                </a>
-                <a href="/about">
-                  <button className="bg-white border-2 border-[#D62D3A] text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#D62D3A] hover:text-white transition-all duration-300">
-                    Meer Informatie
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D62D3A]/20 to-[#E63946]/20 rounded-3xl blur-2xl" />
+      {/* Personal Sign-off Section */}
+      <section className="py-[120px] px-4">
+        <div className="max-w-[1150px] mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+            <div className="w-full md:w-[567px] flex-shrink-0">
               <Image
                 src="/images/rebel2022-bram-photo_eav1yc77.png"
                 alt="Bram - CEO van REBEL Internet"
-                width={350}
-                height={350}
-                className="w-full h-auto rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 max-w-md mx-auto"
+                width={567}
+                height={649}
+                className="w-full h-auto rounded-[4.2px]"
               />
+            </div>
+            
+            <div className="w-full md:w-[450px]">
+              <p className="text-signed-statement text-[#5d524b] mb-8 leading-tight">
+                Neem contact op met Bram, onze CEO, voor vragen of mogelijke samenwerkingen. We zijn transparant over onze ambities en werkwijze.
+              </p>
+              
+              {/* Handwritten signature placeholder */}
+              <div className="mb-4">
+                <svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 40 Q 30 20, 50 35 T 90 30" 
+                        fill="none" 
+                        stroke="#5d524b" 
+                        strokeWidth="2" 
+                        strokeLinecap="round"
+                        strokeLinejoin="round" />
+                  <path d="M50 35 L 55 45" 
+                        fill="none" 
+                        stroke="#5d524b" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" />
+                </svg>
+              </div>
+              
+              <div className="text-caption text-[#5d524b]">
+                <div>Bram van der Veer</div>
+                <div>CEO, REBEL Internet</div>
+              </div>
+              
+              <div className="mt-8">
+                <a href="/contact-us" className="btn-light text-action">
+                  Neem contact op
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer lang="nl" />
     </div>
   )
 }

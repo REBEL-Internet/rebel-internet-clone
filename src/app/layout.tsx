@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'REBEL Internet: We will Rank you.',
-  description: 'REBEL Internet is a holding company which has created & ran over 30+ unique web concepts worldwide.',
+  description: 'REBEL Internet builds and operates its own websites and digital services, including MrKortingscode.nl and specialist marketplace-ranking services.',
 }
 
 export default function RootLayout({

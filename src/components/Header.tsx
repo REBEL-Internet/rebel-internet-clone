@@ -5,7 +5,25 @@ import Image from 'next/image';
 import { HamburgerIcon } from './icons';
 import { useState, useEffect } from 'react';
 
-export function Header() {
+const translations = {
+  nl: {
+    about: 'Over Ons',
+    socialResponsibility: 'Sociale Verantwoordelijkheid',
+    contact: 'Contact',
+    projects: 'Projecten',
+    career: 'Carrière'
+  },
+  en: {
+    about: 'About Us',
+    socialResponsibility: 'Social Responsibility',
+    contact: 'Contact Us',
+    projects: 'Projects',
+    career: 'Career'
+  }
+};
+
+export function Header({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
+  const t = translations[lang];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -19,12 +37,8 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 w-full h-20 px-4 md:px-20 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-[1280px] mx-auto px-[15px] h-20 flex items-center justify-between">
+    <header className="fixed top-[33px] left-0 right-0 z-50 px-4">
+      <div className="max-w-[1383px] mx-auto floating-nav flex items-center justify-between">
         <div className="flex-shrink-0">
           <Link href="/" className="group">
             <Image
@@ -40,19 +54,18 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           {[
-            { href: '/about', label: 'About Us' },
-            { href: '/social-responsibility', label: 'Social Responsibility' },
-            { href: '/contact-us', label: 'Contact Us' },
-            { href: '/#companies', label: 'Our Companies' },
-            { href: '/career', label: 'Career' }
+            { href: '/about', label: t.about },
+            { href: '/social-responsibility', label: t.socialResponsibility },
+            { href: '/contact-us', label: t.contact },
+            { href: '/projects', label: t.projects },
+            { href: '/career', label: t.career }
           ].map((link) => (
             <Link 
               key={link.href}
               href={link.href} 
-              className="relative text-[#202020] hover:text-[#d62d3a] transition-colors duration-300 text-base font-medium leading-8 group"
+              className="text-navigation text-[#5d524b] hover:text-[#D62D3A] transition-colors duration-300"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d62d3a] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -88,19 +101,19 @@ export function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-lg shadow-2xl z-50 animate-in slide-in-from-top duration-300">
+        <div className="md:hidden absolute top-[75px] left-0 right-0 bg-[#fef9ed] shadow-2xl z-50 rounded-[5px] mx-4">
           <nav className="flex flex-col p-6">
             {[
-              { href: '/about', label: 'About Us' },
-              { href: '/social-responsibility', label: 'Social Responsibility' },
-              { href: '/contact-us', label: 'Contact Us' },
-              { href: '/#companies', label: 'Our Companies' },
-              { href: '/career', label: 'Career' }
+              { href: '/about', label: t.about },
+              { href: '/social-responsibility', label: t.socialResponsibility },
+              { href: '/contact-us', label: t.contact },
+              { href: '/projects', label: t.projects },
+              { href: '/career', label: t.career }
             ].map((link) => (
               <Link 
                 key={link.href}
                 href={link.href} 
-                className="py-4 text-[#202020] hover:text-[#d62d3a] transition-all duration-300 text-lg font-medium border-b border-gray-100 last:border-0 hover:pl-2"
+                className="py-4 text-[#5d524b] hover:text-[#D62D3A] transition-all duration-300 text-navigation border-b border-[#5d524b]/10 last:border-0"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

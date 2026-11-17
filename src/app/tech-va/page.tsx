@@ -127,7 +127,7 @@ export default function TechVA() {
               Join our team and be part of something great
             </p>
             <a href="/contact-us">
-              <button className="bg-white text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+              <button className="bg-white text-[#D62D3A] px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 hover:transition-all duration-300">
                 Submit Your Application
               </button>
             </a>
