@@ -47,13 +47,7 @@ export default function Projects() {
       url: "https://ytgeeks.org/",
       category: "Video Rankings"
     },
-    {
-      name: "OnlyFans Traffic Geeks",
-      logo: null,
-      description: "Gespecialiseerde traffic en ranking services voor content creators op OnlyFans en vergelijkbare platforms.",
-      url: "https://otgeeks.org/",
-      category: "Creator Services"
-    },
+
     {
       name: "BNB Geeks",
       logo: null,
