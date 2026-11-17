@@ -10,15 +10,13 @@ const translations = {
     about: 'Over Ons',
     socialResponsibility: 'Sociale Verantwoordelijkheid',
     contact: 'Contact',
-    projects: 'Projecten',
-    career: 'Carrière'
+    projects: 'Projecten'
   },
   en: {
     about: 'About Us',
     socialResponsibility: 'Social Responsibility',
     contact: 'Contact Us',
-    projects: 'Projects',
-    career: 'Career'
+    projects: 'Projects'
   }
 };
 
@@ -57,8 +55,7 @@ export function Header({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
             { href: '/about', label: t.about },
             { href: '/social-responsibility', label: t.socialResponsibility },
             { href: '/contact-us', label: t.contact },
-            { href: '/projects', label: t.projects },
-            { href: '/career', label: t.career }
+            { href: '/projects', label: t.projects }
           ].map((link) => (
             <Link 
               key={link.href}
@@ -107,8 +104,7 @@ export function Header({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
               { href: '/about', label: t.about },
               { href: '/social-responsibility', label: t.socialResponsibility },
               { href: '/contact-us', label: t.contact },
-              { href: '/projects', label: t.projects },
-              { href: '/career', label: t.career }
+              { href: '/projects', label: t.projects }
             ].map((link) => (
               <Link 
                 key={link.href}

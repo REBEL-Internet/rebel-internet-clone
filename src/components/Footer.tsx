@@ -6,7 +6,6 @@ const translations = {
     tagline: 'We creëren en beheren 30+ unieke webconcepten wereldwijd sinds onze oprichting.',
     quickLinks: 'Snelle Links',
     about: 'Over Ons',
-    career: 'Carrière',
     projects: 'Projecten',
     contact: 'Contact',
     resources: 'Bronnen',
@@ -27,7 +26,6 @@ const translations = {
     tagline: 'Creating & running 30+ unique web concepts worldwide since our foundation.',
     quickLinks: 'Quick Links',
     about: 'About Us',
-    career: 'Career',
     projects: 'Projects',
     contact: 'Contact',
     resources: 'Resources',
@@ -75,7 +73,6 @@ export function Footer({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
             <nav className="flex flex-col gap-2">
               {[
                 { href: '/about', label: t.about },
-                { href: '/career', label: t.career },
                 { href: '/projects', label: t.projects },
                 { href: '/contact-us', label: t.contact }
               ].map((link) => (
